@@ -1,0 +1,6 @@
+.idea/**
+/logs/**
+/diffCounters.csv
+/test.py
+/currentCounterIDs.json
+/.env
