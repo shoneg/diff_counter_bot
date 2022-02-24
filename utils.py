@@ -19,7 +19,7 @@ def counter_to_string(counter: dict) -> str:
 {MONDAY}: {counter[MONDAY]}\n{TUESDAY}: {counter[TUESDAY]}\n{WEDNESDAY}: {counter[WEDNESDAY]}\n{THURSDAY}: {counter[THURSDAY]}\n{FRIDAY}: {counter[FRIDAY]}\n{SATURDAY}: {counter[SATURDAY]}\n{SUNDAY}: {counter[SUNDAY]}'
 
 
-def get_current_counter_from_update(update: Update, context: CallbackContext) -> dict | None:
+def get_current_counter_from_update(update: Update, context: CallbackContext) -> dict:
   chat_id = update.effective_chat.id
   counter_id = get_current_counter_id(chat_id)
   if counter_id is None:
