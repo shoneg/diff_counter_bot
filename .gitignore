@@ -4,4 +4,5 @@
 /test.py
 /currentCounterIDs.json
 /.env
+/uploadMyLogFile.sh
 /__pycache__/**
