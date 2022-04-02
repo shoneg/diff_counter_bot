@@ -138,7 +138,7 @@ def message(update: Update, context: CallbackContext):
 
   try:
     split_text = update.message.text.split(' ')
-    add_value = float(split_text[0].replace(',', '.'))
+    add_value = round(float(split_text[0].replace(',', '.')), 2)
   except ValueError:
     send(update, context, 'Du musst eine Zahl angeben')
     return
@@ -186,6 +186,7 @@ def message(update: Update, context: CallbackContext):
     # add rest
     log.loc[len(log.index)] = [(root_time - timedelta(hours=add_value - before_pause[1])).isoformat(), root_time.isoformat(), add_value - before_pause[1]]
 
+  counter[CURRENT] = round(counter[CURRENT], 2)
   if not set_counter(counter):
     send(update, context, "Beim Speichern ist ein Fehler aufgetreten")
     return
